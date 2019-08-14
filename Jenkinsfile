@@ -7,7 +7,7 @@ pipeline {
   agent {
     kubernetes {
       label "${env.label}"
-      defaultContainer 'jakartaeetck-ci'
+      defaultContainer 'jaxr-tck-ci'
       yaml """
 apiVersion: v1
 kind: Pod
@@ -18,7 +18,7 @@ spec:
     hostnames:
     - "localhost.localdomain"
   containers:
-  - name: jakartaeetck-ci
+  - name: jaxr-tck-ci
     image: jakartaee/cts-base:0.1
     command:
     - cat
